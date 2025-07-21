@@ -7,7 +7,10 @@ const PORT = 9000;
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://foodeyzoneapp.netlify.app/", // replace with actual domain
+  credentials: true
+}));
 
 // Serve static images from /public/images
 app.use("/images", express.static(path.join(__dirname, "public/images")));
